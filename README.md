@@ -14,5 +14,6 @@ phpStudy
 
 PHP 이용하면 웹페이지를 자동으로 생성해 줌.
 
+bitnami wamp을 깔아야 php 이용 가능함.
 
 ---
