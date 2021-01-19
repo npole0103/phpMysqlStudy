@@ -46,6 +46,10 @@ URL로 값을 전달하는 방법.
 `$_GET['name'];` 을 echo로 표시하면 URL에 있는 ABC.php?name="1234"를 참조해
 1234를 나타나게 해준다.
 
+### function
+`strlen(string type);` 문자열의 문자 갯수를 정수형으로 반환해주는 함수.
+
+`nl2br(string type)` 띄어쓰기 된 부분을 자동으로 br태그로 치환해주는 함수.
 
 
 
