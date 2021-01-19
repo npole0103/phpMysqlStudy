@@ -51,9 +51,24 @@ URL로 값을 전달하는 방법.
 
 `nl2br(string type)` 띄어쓰기 된 부분을 자동으로 br태그로 치환해주는 함수.
 
+`file_get_contents('./people.txt', true);` 파일 명에 대한 표현식을 나타내 줌. 
 
-
-
+``` html
+    <h1>WEB</h1>
+    <ol>
+        <li><a href="index.php?id=HTML">HTML</a></li>
+        <li><a href="index.php?id=CSS">CSS</a></li>
+        <li><a href="index.php?id=JavaScript">JavaScript</a></li>
+    </ol>
+    <h2>
+        <?php
+            echo $_GET['id'];
+        ?>
+    </h2>
+    <?php
+        echo file_get_contents("data/".$_GET['id']);
+    ?>
+```
 
 
 ---

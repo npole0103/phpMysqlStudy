@@ -19,10 +19,9 @@
             echo $_GET['id'];
         ?>
     </h2>
-    Lorem ipsum dolor sit amet consectetur adipisi
-    cing elit. Consequuntur, quo quam a modi fugit, doloremque voluptatib
-    us hic, rem ab tempore tempora molestias excepturi eaque non voluptatu
-    m sit at placeat sequi?
+    <?php
+        echo file_get_contents("data/".$_GET['id']);
+    ?>
 </body>
 
 </html>
