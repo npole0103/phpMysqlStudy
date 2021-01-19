@@ -39,6 +39,12 @@ Concatenation operator
 
 `$var` `$name = "npole0103"`
 
+### paramter
+
+URL로 값을 전달하는 방법.
+
+`$_GET['name'];` 을 echo로 표시하면 URL에 있는 ABC.php?name="1234"를 참조해
+1234를 나타나게 해준다.
 
 
 
