@@ -21,6 +21,8 @@ Four compound types : array, object, callable, iterable
 
 And finally two special types : resource, NULL
 
+`var_dump();` 이 함수를 사용하면 인자에 들어간 값이 어떤 데이터 타입인지까지 같이 알려줌.
+
 ### Number
 `echo 1+1;`
 
@@ -69,6 +71,24 @@ URL로 값을 전달하는 방법.
         echo file_get_contents("data/".$_GET['id']);
     ?>
 ```
+
+### Comparison
+
+[php.net 참고](https://www.php.net/manual/en/language.operators.comparison.php)
+
+``` html
+$a == $b	Equal	true if $a is equal to $b after type juggling.
+$a === $b	Identical	true if $a is equal to $b, and they are of the same type.
+$a != $b	Not equal	true if $a is not equal to $b after type juggling.
+$a <> $b	Not equal	true if $a is not equal to $b after type juggling.
+$a !== $b	Not identical	true if $a is not equal to $b, or they are not  of the same type.
+$a < $b	    Less than	true if $a is strictly less than $b.
+$a > $b	    Greater than	true if $a is strictly greater than $b.
+$a <= $b	Less than or equal to	true if $a is less than or equal to $b.
+$a >= $b	Greater than or equal to	true if $a is greater than or equal to $b.
+$a <=> $b	Spaceship	An int less than, equal to, or greater than zero when $a is less than, equal to, or greater than $b, respectively.
+```
+
 
 
 ---
