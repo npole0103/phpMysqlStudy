@@ -33,6 +33,19 @@ Concatenation operator
     ?>
 ```
 
+### Variable
+
+변수 앞에 $표시를 붙여서 선언한다. 
+
+`$var` `$name = "npole0103"`
+
+
+
+
+
+
+
+
 ---
 ## etc
 
