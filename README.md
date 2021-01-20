@@ -93,8 +93,17 @@ $a <=> $b	Spaceship	An int less than, equal to, or greater than zero when $a is 
 
 C, C++과 확연히 차이나는 부분은 없음.
 
+### Iteration(Loop)
 
+C, C++과 확연히 차이나는 부분 없음. 하지만 변수 사용시 $기호를 사용한다는 것이 다소 주의가 필요.
 
+``` html
+    while ($i < 3) 
+    {
+        echo '3<br>';
+        $i += 1;
+    }
+```
 ---
 ## etc
 
