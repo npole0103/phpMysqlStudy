@@ -89,6 +89,10 @@ $a >= $b	Greater than or equal to	true if $a is greater than or equal to $b.
 $a <=> $b	Spaceship	An int less than, equal to, or greater than zero when $a is less than, equal to, or greater than $b, respectively.
 ```
 
+### Conditional
+
+C, C++과 확연히 차이나는 부분은 없음.
+
 
 
 ---
