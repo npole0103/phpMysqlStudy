@@ -138,6 +138,39 @@ put file contents : `file_put_contents('result.txt', sum2(2,7));`
     ?>
 ```
 
+### Form & Post
+
+``` html
+
+    <form action="form.php">
+        <p>
+            <input type="text" name="title" placeholder="title">
+        </p>
+        <p>
+            <textarea name="description"></textarea>
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+```
+
+``` html
+<?php
+    echo "<p>title : ". $_GET['title']. "</p>";
+    echo "<p>description : ". $_GET['description']. "</p>";
+?>
+```
+
+1. title과 description에 텍스트를 입력하고 submit 버튼을 누름.
+2. Submit 버튼이 속해있는 form태그의 action 속성이 가르키는 URL로 바꿈.
+3. URL 뒤에 name의 속성 값을 URL parameter로 해서 텍스트에 입력한 값과 함께 표시
+
+`file_put_contents('data/'.$_GET['title'], $_GET['description']);`
+Parameter : 경로, 파일명, 파일 내용
+
+Form에 method 
+
 ---
 ## etc
 
@@ -159,6 +192,26 @@ get file list : `scandir($dir)`
 주석은 C언어와 똑같음.
 
 하나의 함수는 하나의 기능만 갖는다.
+
+정보 시스템에서 가장 중요하게 체크해야할 기능 : Create Read Update Delete
+
+URL을 통해서 서버쪽에 데이터를 전송하는 방식은 사용자가 데이터를 보내거나 지울 떄 사용하면 안됨. 취약점, 의도치 않는 에러 등
+
+URL을 Parameter를 통해서 서버에 데이터를 전송하는 방식은 bookmark에서 사용하기 적합한 방식임.
+
+POST 방식을 사용하면 데이터를 은닉해서 전달할 수 있음. 주소창도 parameter 값이 나타나지 않음.
+
+정리하자면 중요하고 은닉되어야 하는 데이터는 POST 방식으로 보내야하고 bookmark 같은 사용자에게 노출되거나 링크를 제3자가 받았을 때 문제가 되지 않는 데이터인 경우는 URL parameter로(default 방식)으로 보내면 된다.
+
+form 태그에 method="post"는 post방식 / 아무 옵션도 주지 않거나 method="get"으로 속성값을 준다면 get 방식.
+
+HTML 에서 < form action="hi.php">가 있다면
+
+태그는 form  
+요소는 < form action="hi.php"> 전체  
+속성은 action  
+속성값은 hi.php  
+※변수 : align, center 등등
 
 
 ---
