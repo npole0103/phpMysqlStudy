@@ -120,6 +120,10 @@ get file list : `scandir($dir);`
 
 count index elements : `count($list);`
 
+get file contents : `file_get_contents("data/".$_GET['id']);`
+
+put file contents : `file_put_contents('result.txt', sum2(2,7));`
+
 ### function2
 ``` html
     <?php
@@ -154,6 +158,7 @@ get file list : `scandir($dir)`
 
 주석은 C언어와 똑같음.
 
+하나의 함수는 하나의 기능만 갖는다.
 
 
 ---
