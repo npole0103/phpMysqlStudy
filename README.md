@@ -114,6 +114,11 @@ C, C++과 배열 사용법이 많이 다르기 때문에 따로 공부가 필요
 
 [php.ney Array_Functions](https://www.php.net/manual/en/ref.array.php)
 
+### ect functions
+
+get file list : `scandir($dir);`
+
+count index elements : `count($list);`
 
 
 ---
@@ -132,7 +137,9 @@ display_errors = On // 에러 정보를 보여줌.
 opcache.enable = 0  // php 파일을 수정하면 바로 반영되게끔 해줌.
 로 변경 후 저장. Restat All 해주면 적용 됨.
 
+get file list : `scandir($dir)`
 
+주석은 C언어와 똑같음.
 
 
 
