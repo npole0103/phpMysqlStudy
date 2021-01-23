@@ -120,6 +120,19 @@ get file list : `scandir($dir);`
 
 count index elements : `count($list);`
 
+### function2
+``` html
+    <?php
+        function basic()
+        {
+            print("lorem<br>");
+            print("lorem2<br>");
+        }
+
+        basic();
+        basic();
+    ?>
+```
 
 ---
 ## etc
