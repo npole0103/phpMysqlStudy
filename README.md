@@ -169,7 +169,12 @@ put file contents : `file_put_contents('result.txt', sum2(2,7));`
 `file_put_contents('data/'.$_GET['title'], $_GET['description']);`
 Parameter : 경로, 파일명, 파일 내용
 
-Form에 method 
+리다이렉션 : 다른 페이지로 방향을 바꿔준다.
+`header('Location: /index.php?id='.$_POST['title']);`
+
+
+
+
 
 ---
 ## etc
@@ -208,10 +213,12 @@ form 태그에 method="post"는 post방식 / 아무 옵션도 주지 않거나 m
 HTML 에서 < form action="hi.php">가 있다면
 
 태그는 form  
-요소는 < form action="hi.php"> 전체  
+요소는 `<form action="hi.php">` 전체  
 속성은 action  
 속성값은 hi.php  
 ※변수 : align, center 등등
 
+URL 리다이렉션 : 출력 방향을 바꾸는 것.
+URL 리다이렉션(URL redirection← URL 넘겨주기)은 이용 가능한 웹 페이지를 하나 이상의 URL 주소로 만들어주는 월드 와이드 웹 기법이다. URL 포워딩(URL forwarding)이라고도 한다. 넘겨받은 URL을 웹 브라우저가 열려고 하면 다른 URL의 문서가 열리게 된다.
 
 ---
