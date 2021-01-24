@@ -182,6 +182,12 @@ rename("/tmp/tmp_file.txt", "/home/user/login/docs/my_file.txt");
 ?>
 ```
 
+값 자체를 가져올 땐 `$_GET['ABC']`로 가져옴.  
+ex) `isset($_GET['ABC'])`
+
+문자열에서 값을 가져올 땐 `<?=$_GET['ABC']?>`(echo 단축 태그)로 사용함.  
+ex) `<a href="delete_process.php?id=<?=$_GET['id']?>">Delete</a>`
+
 
 
 ---
@@ -226,7 +232,10 @@ HTML 에서 < form action="hi.php">가 있다면
 속성값은 hi.php  
 ※변수 : align, center 등등
 
-URL 리다이렉션 : 출력 방향을 바꾸는 것.
+URL 리다이렉션 : 출력 방향을 바꾸는 것.  
 URL 리다이렉션(URL redirection← URL 넘겨주기)은 이용 가능한 웹 페이지를 하나 이상의 URL 주소로 만들어주는 월드 와이드 웹 기법이다. URL 포워딩(URL forwarding)이라고도 한다. 넘겨받은 URL을 웹 브라우저가 열려고 하면 다른 URL의 문서가 열리게 된다.
+
+링크를 건다는 것은 $_GET 방식임.
+
 
 ---
