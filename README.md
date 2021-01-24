@@ -189,6 +189,21 @@ ex) `isset($_GET['ABC'])`
 ex) `<a href="delete_process.php?id=<?=$_GET['id']?>">Delete</a>`
 
 
+### Refactoring
+
+lib 폴더 : 프로그래밍에서 재사용할만한 코드나 로직을 잘 정리해둔 것을 도서관이라고 한다. 이를 축약해서 lib으로 칭한다.
+
+`require('lib/print.php');`
+설정된 경로에 있는 코드를 사용할 수 있게끔 해줌.
+C언어나 C++로 치면 #include 같은 느낌.
+
+모듈화를 하다보면 정의했던 것을 또 호출하게 될 수가 있는데
+이는 C언어나 C++에서는 `#pragma once`로 해결된다.
+
+PHP에서는 이를 `require_once();`로 해결할 수 있다.
+`require_once('lib/print.php');`
+
+
 
 ---
 ## etc
@@ -236,6 +251,5 @@ URL 리다이렉션 : 출력 방향을 바꾸는 것.
 URL 리다이렉션(URL redirection← URL 넘겨주기)은 이용 가능한 웹 페이지를 하나 이상의 URL 주소로 만들어주는 월드 와이드 웹 기법이다. URL 포워딩(URL forwarding)이라고도 한다. 넘겨받은 URL을 웹 브라우저가 열려고 하면 다른 URL의 문서가 열리게 된다.
 
 링크를 건다는 것은 $_GET 방식임.
-
 
 ---
