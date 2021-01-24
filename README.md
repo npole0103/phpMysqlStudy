@@ -155,7 +155,7 @@ put file contents : `file_put_contents('result.txt', sum2(2,7));`
     </form>
 ```
 
-``` html
+``` php
 <?php
     echo "<p>title : ". $_GET['title']. "</p>";
     echo "<p>description : ". $_GET['description']. "</p>";
@@ -172,7 +172,15 @@ Parameter : 경로, 파일명, 파일 내용
 리다이렉션 : 다른 페이지로 방향을 바꿔준다.
 `header('Location: /index.php?id='.$_POST['title']);`
 
+PHP echo 단축 태그인 <?=$var?>
+`<?php echo $_GET['id']; ?>` 와 `<?=$_GET['id']?>`는 같은 표현임.
 
+파일명 바꾸기
+``` php
+<?php
+rename("/tmp/tmp_file.txt", "/home/user/login/docs/my_file.txt");
+?>
+```
 
 
 
