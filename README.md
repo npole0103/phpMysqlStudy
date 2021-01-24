@@ -202,6 +202,32 @@ C언어나 C++로 치면 #include 같은 느낌.
 PHP에서는 이를 `require_once();`로 해결할 수 있다.
 `require_once('lib/print.php');`
 
+### 보안 XSS
+
+Cross Site Scripting : 웹사이트에다가 스크립트 태그를 주입하는 것임.
+
+강제로 다른 사이트로 이동시킨다던지, 로그인을 대신 한다던지, 정보를 유출한다던지 등등의 행위를 할 수 있음.
+
+``` javascript
+XSS 
+<script>
+alert("babo");
+location.href="https://www.naver.com"
+</script> 
+```
+
+보안적으로 막는 방법
+`htmlspecialchars();` 사용하기
+
+Example `echo htmlspecialchars('<script>alert("babo");</script>');`
+
+이렇게 하게 되면 꺽쐬 기호가 $lt; $gt;로 치환이 됨.
+
+하지만 이런식으로 쓰게 된다면 img태그나 줄바꿈 등 필수적으로 필요한 태그들을
+못 사용할 수 있다. 이떄 strip_tags를 사용하면 모든 태그를 다 날려버림과 동시에 옵션을 지정해서 원하는 태그들은 살릴 수 있다.
+
+**사용자가 입력한 정보를 무조건 불신하라**
+
 ---
 ## etc
 

@@ -1,0 +1,5 @@
+XSS 
+<script>
+alert("babo");
+location.href="https://www.naver.com"
+</script> 
