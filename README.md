@@ -236,6 +236,55 @@ http://172.30.1.58/index.php?id=../password.txt 를 입력하면 패스워드 �
 
 `basename();`로 예방 가능. 경로를 제외한 파일 이름만 선택해주는 함수.
 
+### UI & API
+
+API는 부품이고 언어의 문법은 결합 방법이다.
+
+모든 것을 다 배우고 만드려는 효율적인 방법보다 때론 비효율적으로 최소한의 지식으로 깨작거리는 것이 나중에는 피가되고 살이될 수가 있다.
+
+### Finished
+
+API를 사용하지 않고서는 할 수 있는 것이 거의 없다.
+
+API는 선택이 아니라 필수.
+
+PHP의 API는 대체로 함수로 제공됨.
+
+**API LIST**
+Audio Formats Manipulation : MP3파일 관련 정보 추출 API
+
+Compression and Archive Extensions : 압축 관련 API
+
+Cryptography Extensions : 암호화 관련 API
+
+Database Extensions : 데이터 베이스 관련 API
+
+File System Related Extensions : 파일 시스템 관련 API
+
+Human Language and Character Encoding Support : 문자 처리 관련 API
+
+Image Processing and Generation : 이미지 프로세싱 관련 API
+
+Mail Related Extensions : 이메일 관련 API
+
+Mathematical Extensions : 수학과 관련된 처리시 필요한 API
+
+[**PHP composer**](https://getcomposer.org/)
+
+A Dependency Manager for PHP : 패키지 관리자
+
+다른 사람들이 만든 패키지를 이용하여 소프트웨어를 만들 수 있음.
+
+파일의 대체제인 데이터베이스가 큰 장점을 갖고 있음.
+
+php cookies : 접속자들을 사용자를 식별할 수 있다. 하지만 보안상 제약사항이 있음.
+
+php sessions : 사용자를 관리함에서 가장 중요함.
+
+federation authentication : 타사의 인증 시스템으로 로그인
+
+php file upload : 파일 업로드
+
 ---
 ## etc
 
