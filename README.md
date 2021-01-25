@@ -228,6 +228,14 @@ Example `echo htmlspecialchars('<script>alert("babo");</script>');`
 
 **사용자가 입력한 정보를 무조건 불신하라**
 
+### 보안 파일 경로 보호
+
+root 폴더에 password.txt가 존재한다고 가정.
+
+http://172.30.1.58/index.php?id=../password.txt 를 입력하면 패스워드 탈취 가능.
+
+`basename();`로 예방 가능. 경로를 제외한 파일 이름만 선택해주는 함수.
+
 ---
 ## etc
 

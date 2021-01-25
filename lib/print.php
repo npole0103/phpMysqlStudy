@@ -10,7 +10,14 @@ function print_title()
 function print_description()
 {
     if (isset($_GET['id']))
-        echo htmlspecialchars(file_get_contents("data/" . $_GET['id']));
+        {
+            echo basename("data/".$_GET['id']);
+            echo "<br>";
+
+            $basename = basename($_GET['id']);
+
+            echo htmlspecialchars(file_get_contents("data/" . $basename));
+        }
     else
         echo "Hello, PHP";
 }
