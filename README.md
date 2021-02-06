@@ -13,6 +13,6 @@ PHP MySQL Study
 
 ## etc
 
-PHP 는  Middle-Ware라고도 한다. 웹과 데이터베이스 중간에서 매개 역할을 하기 떄문.
+PHP 는  Middle-Ware라고도 한다. 웹과 데이터베이스 중간에서 매개 역할을 하기 떄문이다.
 
 ---
