@@ -9,6 +9,18 @@ PHP MySQL Study
 
 웹의 접근성 & 데이터베이스 데이터 효율적 관리
 
+php와 MySQL을 연동할 수 있는 API는 3가지가 있다.
+PDO Mysql은 객체를 사용하지만 오라클 같은 데이터베이스에 이식성이 좋으며
+mysql은 더 이상 추천되지 않는 api이다. 
+
+그래서 mysql improved로 진행한다.
+
+Mysqli / PDO Mysql / Mysql
+
+함수(procedual)와 객체지향(objective) 방식이 있는데 함수 방식을 사용할 것임.
+
+
+
 ---
 
 ## etc
