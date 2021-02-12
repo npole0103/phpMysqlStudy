@@ -19,7 +19,21 @@ Mysqli / PDO Mysql / Mysql
 
 함수(procedual)와 객체지향(objective) 방식이 있는데 함수 방식을 사용할 것임.
 
+`mysqli_connect()` : DB에서 로그인한 것과 같은 효과를 PHP에서 수행할 수 있다.
 
+`mysqli_query()` : 커넥트한 DB에 Query문 전송
+
+``` php
+mysqli_query($conn, "
+    INSERT INTO topic
+    (title, description, created)
+    VALUE(
+        'MySQL',
+        'MySQL is ..',
+        NOW()
+    )
+");
+```
 
 ---
 
