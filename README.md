@@ -35,6 +35,8 @@ mysqli_query($conn, "
 ");
 ```
 
+`mysqli_error()` : sql문의 에러를 반환 해줌.
+
 ---
 
 ## etc
