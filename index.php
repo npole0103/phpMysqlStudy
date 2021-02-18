@@ -12,6 +12,22 @@ while(($row = mysqli_fetch_array($result)) != NULL)
     $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
     //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
 }
+
+$article = array(
+    'title'=>'Welcome',
+    'description'=>'Hello, Web'
+    //연관 배열 key-value Default Setting
+);
+
+if(isset($_GET['id']))
+{
+    $sql = "SELECT * FROM topic WHERE id={$_GET['id']} LIMIT 1000";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $article['title'] = $row['title'];
+    $article['description'] = $row['description'];
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +39,7 @@ while(($row = mysqli_fetch_array($result)) != NULL)
     <title>WEB</title>
 </head>
 <body>
-    <h1>WEB</h1>
+    <h1><a href="index.php">WEB</a></h1>
     <ol>
         <?=$list
         //PHP TEXT LIST CODE
@@ -32,11 +48,8 @@ while(($row = mysqli_fetch_array($result)) != NULL)
 
     <a href="create.php">Create</a>
 
-    <H2>Welcome</H2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-    , consectetur ratione sed veritatis dolore aperiam est reprehend
-    erit repellat! Sit similique omnis eveniet sequ
-    i laborum autem veniam assumenda commodi est possimus.
+    <h2><?=$article['title']?></h2>
+    <?=$article['description']?>
     
 </body>
 </html>

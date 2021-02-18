@@ -1,3 +1,35 @@
+<?php
+
+$conn = mysqli_connect("localhost", "root", "111111", "opentutorials");
+
+
+$sql = "SELECT * FROM topic LIMIT 1000";
+$result = mysqli_query($conn, $sql);
+$list = '';
+while(($row = mysqli_fetch_array($result)) != NULL)
+{
+    //<li><a href=\"index.php?id=10\"><a/></li>
+    $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
+    //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
+}
+
+$article = array(
+    'title'=>'Welcome',
+    'description'=>'Hello, Web'
+    //연관 배열 key-value Default Setting
+);
+
+if(isset($_GET['id']))
+{
+    $sql = "SELECT * FROM topic WHERE id={$_GET['id']} LIMIT 1000";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+    $article['title'] = $row['title'];
+    $article['description'] = $row['description'];
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +39,11 @@
     <title>WEB</title>
 </head>
 <body>
-    <h1>WEB</h1>
+    <h1><a href="index.php">WEB</a></h1>
     <ol>
-        <li>HTML</li>
+        <?=$list
+        //PHP TEXT LIST CODE
+        ?>
     </ol>
 
     <form action="process_create.php" method="post">

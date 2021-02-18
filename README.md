@@ -90,7 +90,6 @@ while(($row = mysqli_fetch_array($result)) != NULL)
     $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
     //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
 }
-
 ?>
 
 ```
