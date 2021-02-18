@@ -75,6 +75,25 @@ echo $sql;
 
 `mysqli_fetch_array($result);` : mysqli_query에 SELECT 문을 실행시켰을 때 거기서 나온 값을 하나하나 받아오는 함수. 가져올 값이 없다면 NULL을 반환함.
 
+``` php
+
+<?php
+
+$conn = mysqli_connect("localhost", "root", "111111", "opentutorials");
+
+$sql = "SELECT * FROM topic LIMIT 1000";
+$result = mysqli_query($conn, $sql);
+$list = '';
+while(($row = mysqli_fetch_array($result)) != NULL)
+{
+    //<li><a href=\"index.php?id=10\"><a/></li>
+    $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
+    //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
+}
+
+?>
+
+```
 
 ## etc
 
