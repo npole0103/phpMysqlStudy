@@ -21,7 +21,8 @@ $article = array(
 
 if(isset($_GET['id']))
 {
-    $sql = "SELECT * FROM topic WHERE id={$_GET['id']} LIMIT 1000";
+    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+    $sql = "SELECT * FROM topic WHERE id={$filtered_id} LIMIT 1000";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $article['title'] = $row['title'];

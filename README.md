@@ -94,6 +94,18 @@ while(($row = mysqli_fetch_array($result)) != NULL)
 
 ```
 
+## 보안
+
+filtering(필터링) : 들어오는 정보에서 문제가 있는 정보를 막아내는 것.
+
+escaping(이스케이핑) : 문제 있는 정보가 이미 들어온 상태에서 사용자에게 노출될 떄 차단하는 것.
+
+사용자가 SQL문을 주입하는 상황을 예측하고 사용자의 입력 정보를 불신해야한다.
+
+ `mysqli_real_escape_string($conn, Value)` : 주입 공격 기호(SQL 인젝션 등등)들을 문자로 치환해버리는 함수. 사용자의 입력을 받거나 $GET / $POST로 가져오는 값에 사용하면 공격을 필터링 할 수 있다.
+
+
+
 ## etc
 
 PHP 는  Middle-Ware라고도 한다. 웹과 데이터베이스 중간에서 매개 역할을 하기 떄문이다.

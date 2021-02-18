@@ -13,6 +13,7 @@ while(($row = mysqli_fetch_array($result)) != NULL)
     //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
 }
 
+//article array 생성해서 key-value 값 Default 초기화
 $article = array(
     'title'=>'Welcome',
     'description'=>'Hello, Web'
@@ -21,12 +22,12 @@ $article = array(
 
 if(isset($_GET['id']))
 {
-    $sql = "SELECT * FROM topic WHERE id={$_GET['id']} LIMIT 1000";
+    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+    $sql = "SELECT * FROM topic WHERE id={$filtered_id} LIMIT 1000";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
     $article['title'] = $row['title'];
     $article['description'] = $row['description'];
-
 }
 ?>
 
