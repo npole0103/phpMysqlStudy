@@ -12,13 +12,11 @@
         <li>HTML</li>
     </ol>
 
-    <a href="create.php">Create</a>
-
-    <H2>Welcome</H2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-    , consectetur ratione sed veritatis dolore aperiam est reprehend
-    erit repellat! Sit similique omnis eveniet sequ
-    i laborum autem veniam assumenda commodi est possimus.
+    <form action="process_create.php" method="post">
+        <p><input type="text" name='title' placeholder="title"></p>
+        <p><textarea name="description" placeholder="description"></textarea></p>
+        <p><input type="submit"></p>
+    </form>
     
 </body>
 </html>

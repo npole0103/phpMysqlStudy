@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost", "root", "111111", "opentutorials");
 
 $sql = "
-INSER INTO topic
+INSERT INTO topic
 (title , description, created)
 VALUE(
     'MySQL',
