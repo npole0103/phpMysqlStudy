@@ -39,6 +39,43 @@ mysqli_query($conn, "
 
 ---
 
+## 글쓰기 생성
+``` php
+<?php
+
+$conn = mysqli_connect('localhost', 'root', '111111', 'opentutorials');
+
+
+$sql = "
+    INSERT INTO topic
+        (title, description, created)
+        VALUES(
+            '{$_POST['title']}',
+            '{$_POST['description']}',
+            NOW()
+        )
+";
+
+$result = mysqli_query($conn, $sql);
+if($result === false)
+{
+    echo '저장 에러. 관리자에게 문의바랍니다.';
+    error_log(mysqli_error($conn));
+}
+else
+{
+    echo '글쓰기 성공 <a href="index.php">돌아가기</a>';
+}
+echo $sql;
+
+?>
+```
+
+`SELECT * FROM topic LIMIT 1000` : 많은 양의 데이터가 있을 때 SELECT를 해버리면 수십만개의 데이터를 가져오는 상황이 초래될 수 있다. 이를 방지하기 위해 'LIMIT 1000' 이라는 명령어를 입력할 수 있는데 이는 데이터가 몇개든 1000개까지만 보여준다.
+
+`mysqli_fetch_array($result);` : mysqli_query에 SELECT 문을 실행시켰을 때 거기서 나온 값을 하나하나 받아오는 함수. 가져올 값이 없다면 NULL을 반환함.
+
+
 ## etc
 
 PHP 는  Middle-Ware라고도 한다. 웹과 데이터베이스 중간에서 매개 역할을 하기 떄문이다.
