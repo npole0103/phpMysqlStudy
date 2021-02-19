@@ -94,6 +94,8 @@ while(($row = mysqli_fetch_array($result)) != NULL)
 
 ```
 
+---
+
 ## 보안
 
 filtering(필터링) : 들어오는 정보에서 문제가 있는 정보를 막아내는 것.
@@ -102,9 +104,11 @@ escaping(이스케이핑) : 문제 있는 정보가 이미 들어온 상태에�
 
 사용자가 SQL문을 주입하는 상황을 예측하고 사용자의 입력 정보를 불신해야한다.
 
+### filtering
+
  `mysqli_real_escape_string($conn, Value)` : 주입 공격 기호(SQL 인젝션 등등)들을 문자로 치환해버리는 함수. 사용자의 입력을 받거나 $GET / $POST로 가져오는 값에 사용하면 공격을 필터링 할 수 있다. (특수 기호 앞에 백슬래쉬가 들어감)
 
-## SQL Injection
+### SQL Injection
 
 `SELECT * FROM topic;-- WHERE id = 1;`  
 -- 뒤에 있는 행은 전부 무시됨.(한칸 띄어야 함)
@@ -113,6 +117,24 @@ escaping(이스케이핑) : 문제 있는 정보가 이미 들어온 상태에�
 
 SQL Injection 공격으로 root 권한을 얻고, 계정을 만들어서 백도어를 만들 수도 있다. 또한 테이블도 삭제할 수 있으며 계정의 비밀번호 조회, 계정의 삭제 또한 가능하다.
 
+## escaping
+
+`<script>location.href="https://www.naver.com"</script> ` : 정보 입력창에 스크립트 태그를 이용하여 사용자를 다른 사이트로 보낼 수 있다.  
+< > 를 $lt; $gt; 로 치환하면 이 방법을 막을 수 있다.
+
+`htmlspecialchars()` : 위 함수는 꺽쇠를 치환해주는 함수임.
+
+``` php
+    <?php
+        echo htmlspecialchars('<script>alert("hi")</script>');
+    ?>
+```
+
+
+
+
+
+---
 
 ## etc
 
