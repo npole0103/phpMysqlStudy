@@ -28,6 +28,7 @@ $article = array(
 );
 
 $update_link = '';
+$delete_link = '';
 
 if(isset($_GET['id']))
 {
@@ -40,6 +41,14 @@ if(isset($_GET['id']))
 
     //id가 존재할 때만 업데이트 생성
     $update_link = '<a href="update.php?id='.$_GET['id'].'">Update</a>';
+
+    //id가 존재할 때만 삭제 생성
+    $delete_link = '
+        <form action="process_delete.php" method="post">
+            <input type="hidden" name="id" value="'.$_GET['id'].'">
+            <input type="submit" value="Delete">
+        </form>
+    ';
 }
 ?>
 
@@ -63,6 +72,9 @@ if(isset($_GET['id']))
 
     <!--특정 글을 눌렀을 때만 Update 버튼 생성-->
     <?=$update_link?>
+
+    <!--특정 글을 눌렀을 때만 Delete 버튼 생성-->
+    <?=$delete_link?>
 
     <h2><?=$article['title']?></h2>
     <?=$article['description']?>

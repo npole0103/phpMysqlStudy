@@ -22,13 +22,15 @@ $sql = "
 $result = mysqli_query($conn, $sql);
 if($result === false)
 {
-    echo '저장 에러. 관리자에게 문의바랍니다.';
+    echo '업데이트 에러. 관리자에게 문의바랍니다.';
     error_log(mysqli_error($conn));
 }
 else
 {
-    echo '글쓰기 성공 <a href="index.php">돌아가기</a>';
+    echo '업데이트 성공 <a href="index.php">돌아가기</a>';
 }
+
+//잘 실행되었는지 sql문 확인
 echo $sql;
 
 ?>

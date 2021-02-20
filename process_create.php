@@ -27,6 +27,9 @@ else
 {
     echo '글쓰기 성공 <a href="index.php">돌아가기</a>';
 }
+
+//잘 실행되었는지 sql문 확인
 echo $sql;
+
 
 ?>
