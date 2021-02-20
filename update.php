@@ -26,7 +26,6 @@ $article = array(
     'description'=>'Hello, Web'
     //연관 배열 key-value Default Setting
 );
-
 $update_link = '';
 
 if(isset($_GET['id']))
@@ -59,13 +58,11 @@ if(isset($_GET['id']))
         ?>
     </ol>
 
-    <a href="create.php">Create</a>
-
-    <!--특정 글을 눌렀을 때만 Update 버튼 생성-->
-    <?=$update_link?>
-
-    <h2><?=$article['title']?></h2>
-    <?=$article['description']?>
+    <form action="process_create.php" method="post">
+        <p><input type="text" name='title' placeholder="title" value="<?=$article['title']?>"></p>
+        <p><textarea name="description" placeholder="description"><?=$article['description']?></textarea></p>
+        <p><input type="submit"></p>
+    </form>
     
 </body>
 </html>

@@ -26,15 +26,7 @@ $article = array(
     'description'=>'Hello, Web'
     //연관 배열 key-value Default Setting
 );
-if(isset($_GET['id']))
-{
-    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM topic WHERE id={$filtered_id} LIMIT 1000";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($result);
-    $article['title'] = htmlspecialchars($row['title']);
-    $article['description'] = htmlspecialchars($row['description']);
-}
+
 ?>
 
 <!DOCTYPE html>
