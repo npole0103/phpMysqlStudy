@@ -29,15 +29,23 @@ $article = array(
 
 $update_link = '';
 $delete_link = '';
+$author = '';
 
 if(isset($_GET['id']))
 {
     $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM topic WHERE id={$filtered_id} LIMIT 1000";
+    
+    // JOIN된 테이블, topic과 author가 합쳐진 테이블을 가져옴
+    $sql = "SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id WHERE topic.id={$filtered_id} LIMIT 1000";
+
+    //쿼리문으로 한 줄 읽어옴
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
+
+    //데이터가 존재할 때 article에 담아서 보여줌
     $article['title'] = htmlspecialchars($row['title']);
     $article['description'] = htmlspecialchars($row['description']);
+    $article['name'] = htmlspecialchars($row['name']);
 
     //id가 존재할 때만 업데이트 생성
     $update_link = '<a href="update.php?id='.$_GET['id'].'">Update</a>';
@@ -49,6 +57,9 @@ if(isset($_GET['id']))
             <input type="submit" value="Delete">
         </form>
     ';
+
+    //id가 존재할 때만 author 출력
+    $author = "<p>by {$article['name']}</p>";
 }
 ?>
 
@@ -78,6 +89,7 @@ if(isset($_GET['id']))
 
     <h2><?=$article['title']?></h2>
     <?=$article['description']?>
+    <?=$author?>
     
 </body>
 </html>

@@ -149,6 +149,53 @@ Delete 구현시 주의점 : 링크로 접근하게 해서는 안됨. 다른 사
 
 `ALTER TABLE topic ADD COLUMN 칼럼이름 INT(11);` : topic 테이블에 칼럼을 하나 추가할 것인데 '칼럼이름'으로 이름을 짓고 INT(11)형으로 데이터를 추가하겠다.
 
+## Connection between Table and Table
+
+``` php
+//글 제목 / 글 내용 출력 부분
+//article array 생성해서 key-value 값 Default 초기화
+$article = array(
+    'title'=>'Welcome',
+    'description'=>'Hello, Web'
+    //연관 배열 key-value Default Setting
+);
+
+$update_link = '';
+$delete_link = '';
+$author = '';
+
+if(isset($_GET['id']))
+{
+    $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+    
+    // JOIN된 테이블, topic과 author가 합쳐진 테이블을 가져옴
+    $sql = "SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id WHERE topic.id={$filtered_id} LIMIT 1000";
+
+    //쿼리문으로 한 줄 읽어옴
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+
+    //데이터가 존재할 때 article에 담아서 보여줌
+    $article['title'] = htmlspecialchars($row['title']);
+    $article['description'] = htmlspecialchars($row['description']);
+    $article['name'] = htmlspecialchars($row['name']);
+
+    //id가 존재할 때만 업데이트 생성
+    $update_link = '<a href="update.php?id='.$_GET['id'].'">Update</a>';
+
+    //id가 존재할 때만 삭제 생성
+    $delete_link = '
+        <form action="process_delete.php" method="post">
+            <input type="hidden" name="id" value="'.$_GET['id'].'">
+            <input type="submit" value="Delete">
+        </form>
+    ';
+
+    //id가 존재할 때만 author 출력
+    $author = "<p>by {$article['name']}</p>";
+}
+?>
+```
 
 
 ---
