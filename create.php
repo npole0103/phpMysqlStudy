@@ -18,15 +18,26 @@ while(($row = mysqli_fetch_array($result)) != NULL)
     //id값과 title 값이 while문 실행에 따라 정적으로 바뀜
 }
 
+//저자 정보를 가지고옴
+$sql = "SELECT * FROM author";
+$result = mysqli_query($conn, $sql);
 
-//글 제목 / 글 내용 출력 부분
-//article array 생성해서 key-value 값 Default 초기화
-$article = array(
-    'title'=>'Welcome',
-    'description'=>'Hello, Web'
-    //연관 배열 key-value Default Setting
-);
+$select_form = '<select name="author_id">';
+while(($row = mysqli_fetch_array($result)) != NULL)
+{
+    $select_form = $select_form.'<option value='.$row['id'].'>'.$row['name'].'</option>';
+}
+$select_form = $select_form.'</select>';
+/*
+완성 된 태그는
+<select name="author_id">
+    <option value="id">저자정보1</option>
+    <option value="id">저자정보2</option>
+    <option value="id">저자정보3</option>
+</select>
 
+이렇게 된 태그는 옵션 중에 선택한 id값을 form 태그 내에서 author_id 라는 변수에 저장해서 보낸다.
+*/
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +59,7 @@ $article = array(
     <form action="process_create.php" method="post">
         <p><input type="text" name='title' placeholder="title"></p>
         <p><textarea name="description" placeholder="description"></textarea></p>
+        <?=$select_form?>
         <p><input type="submit"></p>
     </form>
     

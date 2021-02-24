@@ -73,13 +73,14 @@ if(isset($_GET['id']))
 </head>
 <body>
     <h1><a href="index.php">WEB</a></h1>
+    <a href="author.php">author</a>
     <ol>
         <?=$list
         //PHP TEXT LIST CODE
         ?>
     </ol>
 
-    <a href="create.php">Create</a>
+    <p><a href="create.php">Create</a></p>
 
     <!--특정 글을 눌렀을 때만 Update 버튼 생성-->
     <?=$update_link?>
@@ -90,6 +91,6 @@ if(isset($_GET['id']))
     <h2><?=$article['title']?></h2>
     <?=$article['description']?>
     <?=$author?>
-    
+
 </body>
 </html>
