@@ -109,6 +109,11 @@ escaping(이스케이핑) : 문제 있는 정보가 이미 들어온 상태에�
 ### Filtering
 
  `mysqli_real_escape_string($conn, Value)` : 주입 공격 기호(SQL 인젝션 등등)들을 문자로 치환해버리는 함수. 사용자의 입력을 받거나 $GET / $POST로 가져오는 값에 사용하면 공격을 필터링 할 수 있다. (특수 기호 앞에 백슬래쉬가 들어감)
+ 
+ ex) 패스워드 칸 뒤에 `123456' OR '1' = '1` 이라고 입력하게 되면
+`SELECT user FROM user_table WHERE id='admin' AND password='123456' OR '1' = '1';` 로 인식되며 true값을 반환하며 로그인에 성공한다.
+
+[escaping 함수 설명](https://blog.naver.com/isaac7263/221473646679)
 
 ### SQL Injection
 
@@ -197,6 +202,7 @@ if(isset($_GET['id']))
 ?>
 ```
 
+리다이렉션 : `header('Location: author.php');` header에다가 Location 정보를 넘기면 사용자를 주소로 튕겨버림. 이것이 리다이렉션.
 
 ---
 
