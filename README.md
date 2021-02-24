@@ -1,6 +1,8 @@
 # phpMysqlStudy
 PHP MySQL Study
 
+cd C:\Bitnami\wampstack-7.4.14-0\mysql\bin
+
 ## PHP & MySQL 연동 원리
 
 1. 웹브라우저가 index.php를 요청
@@ -140,6 +142,13 @@ Delete 구현시 주의점 : 링크로 접근하게 해서는 안됨. 다른 사
 
 `SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id;`
 -> author 테이블 왼쪽에 토픽 테이블을 넣고 두개의 테이블을 조인하겠다.
+
+---
+
+## A lot of Table
+
+`ALTER TABLE topic ADD COLUMN 칼럼이름 INT(11);` : topic 테이블에 칼럼을 하나 추가할 것인데 '칼럼이름'으로 이름을 짓고 INT(11)형으로 데이터를 추가하겠다.
+
 
 
 ---
