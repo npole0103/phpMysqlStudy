@@ -214,4 +214,10 @@ JS : `<form onsubmit="confirm('Are you sure?')"></form>` submit 버튼을 눌렀
 
 Trigger : 어떤 특정 행이 삭제될 때 어떤 행이 삭제되도록 하라. 라고 설정할 수 있음.
 
+검색기능 구현 : `<form method="get" action="search.php">`와 SELECT와 WHERE문을 잘 사용하면된다. 하지만 검색 데이터가 방대해지면 성능이 잘 나오지 않는데 이때 index(색인)을 거는 법을 쓰게 되면 순식간에 데이터가 처리된다.
+
+PDO(PHP DATE OBJECT) : 여러가지 데이터베이스를 동시에 활용 가능함.
+
+AWS RDS, Google Cloud SQL for MySQL, Azure Database for MySQL 클라우딩 컴퓨터 기술.
+
 ---
