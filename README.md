@@ -210,4 +210,8 @@ if(isset($_GET['id']))
 
 PHP 는  Middle-Ware라고도 한다. 웹과 데이터베이스 중간에서 매개 역할을 하기 떄문이다.
 
+JS : `<form onsubmit="confirm('Are you sure?')"></form>` submit 버튼을 눌렀을 때 onsubmit 안에 속성값을 자바스크립트로서 실행시켜라.
+
+Trigger : 어떤 특정 행이 삭제될 때 어떤 행이 삭제되도록 하라. 라고 설정할 수 있음.
+
 ---

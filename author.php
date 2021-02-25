@@ -41,6 +41,13 @@ $conn = mysqli_connect("localhost", "root", "111111", "opentutorials");
                     <td><?=$filtered['name']?></td>
                     <td><?=$filtered['profile']?></td>
                     <td><a href="author.php?id=<?=$filtered['id']?>">Update</a></td>
+                    <td>
+                        <!--만약 confirm값이 거짓이라면(cancel을 눌렀다면) false를 반환-->
+                        <form action="process_delete_author.php" method="post" onsubmit="if(!confirm('sure?')){return false;}">
+                            <input type="hidden" name='id' value="<?=$filtered['id']?>">
+                            <input type="submit" value='delete'>
+                        </form>
+                    </td>
                 </tr>
             <?php
             }
